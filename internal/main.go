@@ -5,16 +5,17 @@ import (
 )
 
 type Response struct {
-	Response string `json:"response"`
-	Message  string `json:"message"`
-	Code     int    `json:"status"`
+	Code    string `json:"code"`
+	Message string `json:"message"`
 }
 
 func main() {
 	r := gin.Default()
 
+	connectAddr := ""
+
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, Response{Response: "Main Page", Message: "OK", Code: 200})
+		c.JSON(200, Response{Code: "OK", Message: "Main Page"})
 	})
 
 	r.Run(":8080")
