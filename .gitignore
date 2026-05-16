@@ -1,0 +1,30 @@
+# binaries
+*.exe
+*.out
+*.test
+*.bin
+
+# build output
+/bin/
+/dist/
+/build/
+
+# Go test cache
+*.test
+*.prof
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+
+# env files
+.env
+.env.*
