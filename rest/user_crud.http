@@ -1,0 +1,45 @@
+@baseUrl = http://localhost:8080
+@uuid = 3d4fd6e3-af17-428a-bbb1-5ca1dab44a3b
+
+### Health check
+GET {{baseUrl}}/
+Accept: application/json
+
+
+### Create new user
+# @name createUser
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "Ilya",
+    "title": "Developer",
+    "password": "supersecret"
+}
+
+
+### Get all users
+GET {{baseUrl}}/all
+Accept: application/json
+
+
+### Get user by UUID
+# Берём uuid из тела ответа запроса createUser
+GET {{baseUrl}}/users/{{uuid}}
+Accept: application/json
+
+
+### Update user by UUID
+PATCH {{baseUrl}}/users/{{uuid}}
+Content-Type: application/json
+
+{
+    "name": "Ilya Updated",
+    "title": "Senior Developer",
+    "photo_url": "https://example.com/photo.jpg"
+}
+
+
+### Delete user by UUID
+DELETE {{baseUrl}}/users/{{uuid}}
+Accept: application/json
